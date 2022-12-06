@@ -64,13 +64,14 @@ export const Right = styled.div`
 `;
 // Mobile Nav
 export const WrapperMobile = styled.div`
+  display: flex;
+  justify-content: center;
   @media screen and (min-width: 964px) {
     display: none;
   }
 `;
 export const Mobile = styled.nav`
   width: 100%;
-  height: 100px;
   display: flex;
   align-items: center;
   padding: 0 25px;
@@ -93,17 +94,22 @@ export const Rightmobile = styled.div`
 `;
 export const MobileUl = styled.ul`
   gap: 50px;
+  width: 50%;
+  z-index: 100;
   display: flex;
-  font-weight: bold;
+  padding: 50px;
   list-style: none;
-  padding: 30px 0 0;
+  font-weight: bold;
+  margin: 150px 0 auto;
   align-items: center;
+  position: absolute;
   transform: ${({ mobile }) =>
     mobile ? "translateY(0)" : "translateY(-1000px)"};
   flex-direction: column;
   opacity: ${({ mobile }) => (mobile ? "100%" : "25%")};
   transition: transform 0.8s ease-in-out;
   justify-content: space-between;
+  background-color: var(--white);
 
   li {
     &:hover {
